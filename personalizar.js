@@ -163,10 +163,10 @@
       '#cr-pz h1{margin:0 0 2px;font-size:19px;} #cr-pz h2{margin:14px 0 4px;font-size:12px;color:#8a909a;text-transform:uppercase;letter-spacing:.8px;}' +
       '#cr-pz .pr,#cr-pz label.pr{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 0;border-top:1px solid #1d2026;cursor:pointer;}' +
       '#cr-pz input[type=color]{width:46px;height:28px;padding:0;border:1px solid #2f333b;border-radius:6px;background:none;cursor:pointer;}' +
-      '#cr-pz input[type=range]{width:150px;} #cr-pz input[type=checkbox]{width:18px;height:18px;accent-color:#2ecc71;}' +
+      '#cr-pz input[type=range]{width:150px;} #cr-pz input[type=checkbox]{width:18px;height:18px;accent-color:#22c7e0;}' +
       '#cr-pz button.sw{width:56px;height:30px;margin:0;padding:0;border:1px solid #3a3f48;border-radius:7px;}' +
       '#cr-pz button{font:700 13px Arial;padding:9px 12px;margin:6px 4px 0 0;border:0;border-radius:8px;cursor:pointer;background:#262a31;color:#fff;}' +
-      '#cr-pz button.g{background:linear-gradient(180deg,#a6ffbf,#2ecc71);color:#06280f;}';
+      '#cr-pz button.g{background:linear-gradient(90deg,#22c7e0,#1a7fa8);color:#fff;box-shadow:0 4px 16px #22c7e044;}';
     document.head.appendChild(st);
     pz = document.createElement('div'); pz.id = 'cr-pz';
     function cor(id, t) { return '<div class="pr"><span>' + t + '</span><button type="button" class="sw" id="' + id + '" data-cor="' + id.slice(3) + '"></button></div>'; }
