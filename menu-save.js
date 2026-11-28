@@ -540,7 +540,7 @@
       d0 = null;
     }
     b.addEventListener('pointerup', solta); b.addEventListener('pointercancel', function () { d0 = null; });
-    ['fullscreenchange', 'webkitfullscreenchange'].forEach(function (ev) { document.addEventListener(ev, function () { ic(!!emFs()); }); });
+    ['fullscreenchange', 'webkitfullscreenchange'].forEach(function (ev) { document.addEventListener(ev, function () { ic(!!emFs()); b.style.display = emFs() ? 'none' : 'flex'; }); });
     document.body.appendChild(b);
   }
 
