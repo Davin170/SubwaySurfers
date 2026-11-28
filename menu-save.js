@@ -198,37 +198,41 @@
   }
 
   function criarMenu() {
-    var circ = "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='360' height='360' fill='none' stroke='%23a36bff' stroke-opacity='.22' stroke-width='1.5'><path d='M0 60h90l30 30h80M40 360V250l40-40h60M360 120h-70l-30 30v90M200 360v-60l50-50h110M120 0v40l30 30'/><circle cx='90' cy='60' r='4' fill='%23a36bff'/><circle cx='200' cy='90' r='4' fill='%23ffb454'/><circle cx='140' cy='210' r='4' fill='%23a36bff'/><circle cx='260' cy='150' r='4' fill='%23ffb454'/><circle cx='360' cy='300' r='4' fill='%23a36bff'/></svg>\")";
+    var circ = "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='360' height='360' fill='none' stroke='%2335c8e6' stroke-opacity='.16' stroke-width='1.5'><path d='M0 60h90l30 30h80M40 360V250l40-40h60M360 120h-70l-30 30v90M200 360v-60l50-50h110M120 0v40l30 30'/><circle cx='90' cy='60' r='4' fill='%2335c8e6'/><circle cx='200' cy='90' r='4' fill='%2335c8e6'/><circle cx='140' cy='210' r='4' fill='%2335c8e6'/><circle cx='260' cy='150' r='4' fill='%2335c8e6'/><circle cx='360' cy='300' r='4' fill='%2335c8e6'/></svg>\")";
     var css = '#cr-menu{position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483646;display:flex;flex-direction:column;' +
-      'background:' + circ + ',radial-gradient(ellipse at 50% 0%,#241447 0%,#0b0a1c 60%,#06060f 100%);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#eee;}' +
+      'background:' + circ + ',radial-gradient(ellipse at 0% 0%,#0b3a4a 0%,#0a0d14 38%,#06080d 100%);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#eee;}' +
       'body:has(#cr-menu[style*="flex"]) #cr-root{visibility:hidden !important;}' +
+      '#cr-menu:after{content:"dav7\\A zn";white-space:pre;position:absolute;right:-10px;bottom:120px;font:italic 800 70px Georgia,serif;line-height:.9;color:#fff;opacity:.04;transform:rotate(-12deg);pointer-events:none;}' +
+      '#cr-menu .lh-foot{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:22px;font-size:12px;color:#6f828c;}' +
+      '#cr-menu .lh-soc{display:flex;gap:10px;justify-content:center;margin-top:12px;}' +
+      '#cr-menu .lh-soc i{width:30px;height:30px;border-radius:50%;background:#ffffff10;display:flex;align-items:center;justify-content:center;font:700 12px Arial;color:#9fb2bb;font-style:normal;}' +
       '#cr-menu .lh-top{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;}' +
-      '#cr-menu .lh-logo{font:800 22px Arial,sans-serif;letter-spacing:.5px;background:linear-gradient(90deg,#c8a2ff,#ffb454);-webkit-background-clip:text;background-clip:text;color:transparent;}' +
-      '#cr-menu .lh-logo small{font:700 10px Arial;color:#ffb454;-webkit-text-fill-color:#ffb454;border:1px solid #ffb45466;border-radius:6px;padding:1px 5px;margin-left:6px;vertical-align:middle;}' +
+      '#cr-menu .lh-logo{font:800 22px Arial,sans-serif;letter-spacing:.5px;background:linear-gradient(90deg,#ffffff,#7fe3f5);-webkit-background-clip:text;background-clip:text;color:transparent;}' +
+      '#cr-menu .lh-logo small{font:700 10px Arial;color:#7fe3f5;-webkit-text-fill-color:#7fe3f5;border:1px solid #7fe3f566;border-radius:6px;padding:1px 5px;margin-left:6px;vertical-align:middle;}' +
       '#cr-menu .lh-right{display:flex;gap:8px;align-items:center;}' +
-      '#cr-menu .lh-chip{font:600 12px Arial;padding:7px 12px;border-radius:999px;background:#ffffff12;border:1px solid #ffffff1f;color:#d9ccff;}' +
-      '#cr-menu .lh-gear{flex:none;width:36px;height:36px;padding:0;border-radius:50%;font-size:17px;background:#ffffff12;border:1px solid #ffffff1f;color:#d9ccff;}' +
+      '#cr-menu .lh-chip{font:600 12px Arial;padding:7px 12px;border-radius:999px;background:#ffffff12;border:1px solid #ffffff1f;color:#cfeff7;}' +
+      '#cr-menu .lh-gear{flex:none;width:36px;height:36px;padding:0;border-radius:50%;font-size:17px;background:#ffffff12;border:1px solid #ffffff1f;color:#cfeff7;}' +
       '#cr-menu .lh-main{flex:1;overflow:auto;display:flex;justify-content:center;align-items:flex-start;padding:10px 16px 110px;}' +
       '#cr-menu .lh-tab{display:none;width:460px;max-width:100%;margin:auto;}' +
       '#cr-menu .lh-tab.on{display:block;}' +
       '#cr-menu .lh-hero{text-align:center;padding:26px 0 8px;}' +
       '#cr-menu h1{margin:0 0 6px;font:800 28px Arial,sans-serif;}' +
-      '#cr-menu .cm-sub{margin:0 0 18px;color:#a79fc4;font-size:14px;}' +
+      '#cr-menu .cm-sub{margin:0 0 18px;color:#8fa3ad;font-size:14px;}' +
       '#cr-menu .lh-card{background:#ffffff0d;border:1px solid #ffffff1a;border-radius:16px;padding:6px 16px;backdrop-filter:blur(6px);}' +
       '#cr-menu label.cm-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-top:1px solid #ffffff12;font-size:14px;cursor:pointer;}' +
       '#cr-menu label.cm-row:first-child{border-top:0;}' +
-      '#cr-menu input[type=number]{width:130px;background:#0d0b1f;color:#fff;border:1px solid #3a3360;border-radius:8px;padding:7px 9px;font-size:14px;text-align:right;}' +
-      '#cr-menu input[type=checkbox]{width:19px;height:19px;accent-color:#a36bff;}' +
+      '#cr-menu input[type=number]{width:130px;background:#070a10;color:#fff;border:1px solid #1f3a47;border-radius:8px;padding:7px 9px;font-size:14px;text-align:right;}' +
+      '#cr-menu input[type=checkbox]{width:19px;height:19px;accent-color:#22c7e0;}' +
       '#cr-menu button{font:700 15px Arial,sans-serif;padding:13px;border:0;border-radius:12px;cursor:pointer;background:#ffffff14;color:#fff;}' +
-      '#cr-menu button.cm-play{width:100%;font-size:18px;padding:16px;background:linear-gradient(90deg,#a36bff,#ff8a3d);color:#fff;box-shadow:0 8px 28px #a36bff55;}' +
+      '#cr-menu button.cm-play{width:100%;font-size:18px;padding:16px;background:linear-gradient(90deg,#22c7e0,#1a7fa8);color:#fff;box-shadow:0 8px 28px #22c7e055;}' +
       '#cr-menu .lh-sec{width:100%;margin-top:12px;}' +
       '#cr-menu .lh-stat{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0 4px;}' +
-      '#cr-menu .lh-tx{color:#b9b0d6;font-size:14px;line-height:1.5;margin:14px 4px;}' +
-      '#cr-menu .cm-nota{margin:12px 4px 0;font-size:12px;color:#8f86ad;min-height:16px;}' +
-      '#cr-menu .lh-nav{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:4px;padding:6px;border-radius:999px;background:#14102b;border:1px solid #ffffff22;box-shadow:0 10px 34px #000a;}' +
-      '#cr-menu .lh-nav button{flex:none;display:flex;flex-direction:column;align-items:center;gap:2px;min-width:68px;padding:8px 12px;border-radius:999px;background:transparent;font:600 11px Arial;color:#9a90bd;}' +
+      '#cr-menu .lh-tx{color:#9fb2bb;font-size:14px;line-height:1.5;margin:14px 4px;}' +
+      '#cr-menu .cm-nota{margin:12px 4px 0;font-size:12px;color:#7d909a;min-height:16px;}' +
+      '#cr-menu .lh-nav{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:4px;padding:6px;border-radius:999px;background:#0c1119;border:1px solid #ffffff22;box-shadow:0 10px 34px #000a;}' +
+      '#cr-menu .lh-nav button{flex:none;display:flex;flex-direction:column;align-items:center;gap:2px;min-width:68px;padding:8px 12px;border-radius:999px;background:transparent;font:600 11px Arial;color:#8394a0;}' +
       '#cr-menu .lh-nav button span{font-size:18px;line-height:1;}' +
-      '#cr-menu .lh-nav button.on{background:linear-gradient(90deg,#a36bff55,#ff8a3d44);color:#fff;}';
+      '#cr-menu .lh-nav button.on{background:linear-gradient(90deg,#22c7e055,#1a7fa844);color:#fff;}';
     var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 
     menuEl = document.createElement('div');
@@ -238,11 +242,11 @@
       '<div class="lh-top"><div class="lh-logo">Dav7 Hub<small>BETA</small></div>' +
       '<div class="lh-right"><div class="lh-chip" id="lh-chip">Save original</div><button type="button" class="lh-gear" id="lh-gear" title="Personalizar">\u2699</button></div></div>' +
       '<div class="lh-main">' +
-      '<div class="lh-tab on" data-t="home"><div class="lh-hero"><h1>Pronto para correr?</h1><p class="cm-sub">Subway Surfers \u00b7 San Francisco</p></div>' +
+      '<div class="lh-tab on" data-t="home"><div class="lh-hero"><h1>Seja bem-vindo ao Dav7 Hub</h1><p class="cm-sub">Subway Surfers \u00b7 San Francisco</p></div>' +
       '<button type="button" class="cm-play" id="cm-play">Jogar</button>' +
       '<div class="lh-stat"><span class="lh-chip" id="lh-s1"></span><span class="lh-chip" id="lh-s2"></span></div>' +
       '<button type="button" class="lh-sec" id="cm-rest">Restaurar save original</button>' +
-      '<div class="cm-nota" style="text-align:right">@dav7.zn</div></div>' +
+      '<div class="lh-foot"><span>Sobre n\u00f3s</span><span>Contato</span><span>Termos de uso</span><span>Suporte</span></div><div class="lh-soc"><i>f</i><i>ig</i><i>\u25b6</i><i>\u27a4</i></div><div class="cm-nota" style="text-align:center">@dav7.zn</div></div>' +
       '<div class="lh-tab" data-t="save"><div class="lh-hero"><h1>Save</h1><p class="cm-sub">Edite o seu progresso antes de jogar.</p></div><div class="lh-card">' +
       '<label class="cm-row"><span>Editar o meu save (liga tudo abaixo)</span><input type="checkbox" id="cm-mestre"></label>' +
       '<label class="cm-row"><span>Moedas</span><input type="number" id="cm-coins" min="0"></label>' +
@@ -250,7 +254,7 @@
       '<label class="cm-row"><span>HeadStarts</span><input type="number" id="cm-hs" min="0"></label>' +
       '<label class="cm-row"><span>Hoverboards</span><input type="number" id="cm-hb" min="0"></label>' +
       '<label class="cm-row"><span>Liberar todos os personagens</span><input type="checkbox" id="cm-chars"></label>' +
-      '<label class="cm-row"><span>No coin <small style="color:#8f86ad">(sem moedas, chaves e hoverboard)</small></span><input type="checkbox" id="cm-nocoin"></label></div>' +
+      '<label class="cm-row"><span>No coin <small style="color:#7d909a">(sem moedas, chaves e hoverboard)</small></span><input type="checkbox" id="cm-nocoin"></label></div>' +
       '<div class="cm-nota" id="cm-nota">Em moedas, chaves, HeadStarts e hoverboards, 0 = n\u00e3o mexer.</div></div>' +
       '<div class="lh-tab" data-t="online"><div class="lh-hero"><h1>Online</h1><p class="cm-sub">Dispute com um amigo com c\u00f3digo de 3 d\u00edgitos.</p></div>' +
       '<div class="lh-card"><p class="lh-tx">Quem pega moeda, morre ou fica parado perde a rodada. O No coin \u00e9 ligado automaticamente.</p></div>' +
@@ -296,7 +300,7 @@
     atualizarCamposNoCoin();
     $m('lh-s1').textContent = cheatOn ? 'Save editado' : 'Save original';
     $m('lh-s2').textContent = cfg.noCoin ? 'No coin: ligado' : 'No coin: desligado';
-    $m('lh-chip').textContent = cheatOn ? 'Save editado' : 'Save original';
+    $m('lh-chip').textContent = 'Player: ' + (cheatOn ? 'Save editado' : 'Original');
     menuEl.style.display = 'flex';
   }
 
