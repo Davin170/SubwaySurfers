@@ -159,7 +159,7 @@
   function criaPainel() {
     var st = document.createElement('style');
     st.textContent = '#cr-pz{position:fixed;top:10px;right:10px;bottom:10px;z-index:2147483647;display:none;flex-direction:column;width:330px;max-width:94vw;' +
-      'box-sizing:border-box;background:#101216;color:#eee;border:1px solid #2a2d33;border-radius:14px;padding:16px;font-family:Arial,sans-serif;font-size:14px;overflow:auto;box-shadow:0 20px 60px rgba(0,0,0,.6);}' +
+      'box-sizing:border-box;background:linear-gradient(#05090ccc,#05090ccc),' + (CR.wall || '#101216') + ' center/cover no-repeat;color:#eee;border:1px solid #2a2d33;border-radius:14px;padding:16px;font-family:Arial,sans-serif;font-size:14px;overflow:auto;box-shadow:0 20px 60px rgba(0,0,0,.6);}' +
       '#cr-pz h1{margin:0 0 2px;font-size:19px;} #cr-pz h2{margin:14px 0 4px;font-size:12px;color:#8a909a;text-transform:uppercase;letter-spacing:.8px;}' +
       '#cr-pz .pr,#cr-pz label.pr{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 0;border-top:1px solid #1d2026;cursor:pointer;}' +
       '#cr-pz input[type=color]{width:46px;height:28px;padding:0;border:1px solid #2f333b;border-radius:6px;background:none;cursor:pointer;}' +

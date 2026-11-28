@@ -200,9 +200,8 @@
   function criarMenu() {
     var circ = "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='360' height='360' fill='none' stroke='%2335c8e6' stroke-opacity='.16' stroke-width='1.5'><path d='M0 60h90l30 30h80M40 360V250l40-40h60M360 120h-70l-30 30v90M200 360v-60l50-50h110M120 0v40l30 30'/><circle cx='90' cy='60' r='4' fill='%2335c8e6'/><circle cx='200' cy='90' r='4' fill='%2335c8e6'/><circle cx='140' cy='210' r='4' fill='%2335c8e6'/><circle cx='260' cy='150' r='4' fill='%2335c8e6'/><circle cx='360' cy='300' r='4' fill='%2335c8e6'/></svg>\")";
     var css = '#cr-menu{position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483646;display:flex;flex-direction:column;' +
-      'background:' + circ + ',radial-gradient(ellipse at 0% 0%,#0b3a4a 0%,#0a0d14 38%,#06080d 100%);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#eee;}' +
+      'background:' + CR.wall + ' center/cover no-repeat,#06090c;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#eee;}' +
       'body:has(#cr-menu[style*="flex"]) #cr-root{visibility:hidden !important;}' +
-      '#cr-menu:after{content:"dav7\\A zn";white-space:pre;position:absolute;right:-10px;bottom:120px;font:italic 800 70px Georgia,serif;line-height:.9;color:#fff;opacity:.04;transform:rotate(-12deg);pointer-events:none;}' +
       '#cr-menu .lh-foot{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:22px;font-size:12px;color:#6f828c;}' +
       '#cr-menu .lh-soc{display:flex;gap:10px;justify-content:center;margin-top:12px;}' +
       '#cr-menu .lh-soc i{width:30px;height:30px;border-radius:50%;background:#ffffff10;display:flex;align-items:center;justify-content:center;font:700 12px Arial;color:#9fb2bb;font-style:normal;}' +

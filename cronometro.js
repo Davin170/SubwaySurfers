@@ -19,7 +19,9 @@
   // ---------- armazenamento (opcional, nunca pode quebrar o jogo) ----------
   // Ponte entre os arquivos: menu-save.js e online.js usam window.CR
   var ganchos = {};
+  var WALL = 'url("data:image/svg+xml,' + encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 860' preserveAspectRatio='xMidYMid slice'><defs><radialGradient id='g' cx='0' cy='0' r='1'><stop offset='0' stop-color='#0d4a52'/><stop offset='.45' stop-color='#08141a'/><stop offset='1' stop-color='#05090c'/></radialGradient></defs><rect width='400' height='860' fill='url(#g)'/><g fill='none' stroke='#3b8ea0' stroke-opacity='.55' stroke-width='1.2'><path d='M400 120h-35l-25 25v30l-30 30h-40M400 135h-30l-20 20v30l-30 30h-30M400 150h-25l-15 15v30l-30 30h-20M400 105h-45l-30 30h-30'/><circle cx='318' cy='170' r='7'/><circle cx='305' cy='200' r='4'/><circle cx='296' cy='218' r='4'/><circle cx='282' cy='233' r='3.5' fill='#3b8ea0'/><path d='M0 210l25 25v60l30 30v50l-25 25M0 230l18 18v60l30 30v40M0 255l12 12v70l30 30M30 400h30l15 15h25'/><circle cx='45' cy='340' r='8'/><circle cx='86' cy='415' r='6' fill='#3b8ea0'/><circle cx='68' cy='395' r='3'/><circle cx='60' cy='385' r='3'/></g><g fill='none' stroke='#8aa6ae' stroke-opacity='.4' stroke-width='1.6' font-family='Brush Script MT,Segoe Script,cursive' font-style='italic' font-weight='700'><text x='290' y='600' font-size='54' transform='rotate(-14 290 600)'>dav7</text><text x='170' y='700' font-size='60' transform='rotate(-10 170 700)'>daisyz</text><text x='10' y='520' font-size='44' transform='rotate(-8 10 520)'>dav7</text></g></svg>`) + '")';
   var CR = window.CR = {
+    wall: WALL,
     lsGet: function (k) { return lsGet(k); }, lsSet: function (k, v) { lsSet(k, v); },
     log: function (t) { log(t); },
     estado: function () { return state; },
