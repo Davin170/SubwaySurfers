@@ -340,9 +340,18 @@
   try {
     var AC = window.AudioContext || window.webkitAudioContext;
     if (AC && AC.prototype) {
+      var ctxs = [], mudo = false;
+      function reg(cx) { if (ctxs.indexOf(cx) < 0) ctxs.push(cx); if (mudo && cx.state === 'running') { try { cx.suspend(); } catch (e) { /* ok */ } } }
+      CR.mudo = function (on) {
+        mudo = !!on;
+        ctxs.forEach(function (cx) { try { if (mudo) cx.suspend(); else cx.resume(); } catch (e) { /* ok */ } });
+      };
+      var rsm = AC.prototype.resume;
+      if (rsm) AC.prototype.resume = function () { reg(this); if (mudo) return Promise.resolve(); return rsm.apply(this, arguments); };
       var cbs = AC.prototype.createBufferSource;
       if (cbs) {
         AC.prototype.createBufferSource = function () {
+          reg(this);
           var node = cbs.apply(this, arguments);
           var st = node.start;
           node.start = function () {

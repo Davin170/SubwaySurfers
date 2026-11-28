@@ -272,13 +272,13 @@
       [].forEach.call(menuEl.querySelectorAll('.lh-nav button'), function (x) { x.classList.toggle('on', x.getAttribute('data-t') === t); });
     }
     [].forEach.call(menuEl.querySelectorAll('.lh-nav button'), function (b) { b.addEventListener('click', function () { aba(b.getAttribute('data-t')); }); });
-    var abrirPers = function () { if (CR.personalizarAbrir) { menuEl.style.display = 'none'; CR.personalizarAbrir(); } else $m('cm-nota').textContent = 'personalizar.js n\u00e3o carregou.'; };
+    var abrirPers = function () { if (CR.personalizarAbrir) { menuEl.style.display = 'none'; if (CR.mudo) CR.mudo(false); CR.personalizarAbrir(); } else $m('cm-nota').textContent = 'personalizar.js n\u00e3o carregou.'; };
     $m('lh-gear').addEventListener('click', abrirPers);
     $m('cm-play').addEventListener('click', aoJogar);
     $m('cm-nocoin').addEventListener('change', atualizarCamposNoCoin);
     $m('cm-rest').addEventListener('click', restaurarOriginal);
     $m('cm-pers').addEventListener('click', abrirPers);
-    $m('cm-online').addEventListener('click', function () { if (CR.onlineAbrir) { if (!CR.exigirNoCoin()) { $m('cm-nota').textContent = 'Ativando No coin para o modo online...'; return; } menuEl.style.display = 'none'; CR.onlineAbrir(); } else $m('cm-nota').textContent = 'online.js n\u00e3o carregou.'; });
+    $m('cm-online').addEventListener('click', function () { if (CR.onlineAbrir) { if (!CR.exigirNoCoin()) { $m('cm-nota').textContent = 'Ativando No coin para o modo online...'; return; } menuEl.style.display = 'none'; if (CR.mudo) CR.mudo(false); CR.onlineAbrir(); } else $m('cm-nota').textContent = 'online.js n\u00e3o carregou.'; });
     // teclas digitadas no menu nao vao para o jogo nem para o WASD
     ['keydown', 'keyup', 'keypress'].forEach(function (t) { menuEl.addEventListener(t, function (e) { if (menuEl.style.display === 'flex') e.stopPropagation(); }); });
   }
@@ -301,6 +301,7 @@
     $m('lh-s2').textContent = cfg.noCoin ? 'No coin: ligado' : 'No coin: desligado';
     $m('lh-chip').textContent = 'Player: ' + (cheatOn ? 'Save editado' : 'Original');
     menuEl.style.display = 'flex';
+    if (CR.mudo) CR.mudo(true);
   }
 
   function aoJogar() {
@@ -318,6 +319,7 @@
       return;
     }
     menuEl.style.display = 'none';
+    if (CR.mudo) CR.mudo(false);
     try { if (document.activeElement && document.activeElement.blur) document.activeElement.blur(); } catch (e) { /* ok */ }
     var cv = document.querySelector('canvas'); if (cv && cv.focus) cv.focus();
   }
