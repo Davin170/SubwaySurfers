@@ -205,6 +205,7 @@
       '#cr-menu .lh-foot{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:22px;font-size:12px;color:#6f828c;}' +
       '#cr-menu .lh-soc{display:flex;gap:10px;justify-content:center;margin-top:12px;}' +
       '#cr-menu .lh-soc i{width:30px;height:30px;border-radius:50%;background:#ffffff10;display:flex;align-items:center;justify-content:center;font:700 12px Arial;color:#9fb2bb;font-style:normal;}' +
+      '#cr-menu .lh-soc{display:flex;gap:14px;justify-content:center;margin-top:18px;}#cr-menu .lh-soc a{width:46px;height:46px;border-radius:50%;background:#ffffff10;border:1px solid #ffffff1f;display:flex;align-items:center;justify-content:center;}' +
       '#cr-menu .lh-top{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;}' +
       '#cr-menu .lh-logo{font:800 22px Arial,sans-serif;letter-spacing:.5px;background:linear-gradient(90deg,#ffffff,#7fe3f5);-webkit-background-clip:text;background-clip:text;color:transparent;}' +
       '#cr-menu .lh-logo small{font:700 10px Arial;color:#7fe3f5;-webkit-text-fill-color:#7fe3f5;border:1px solid #7fe3f566;border-radius:6px;padding:1px 5px;margin-left:6px;vertical-align:middle;}' +
@@ -243,6 +244,7 @@
       '<div class="lh-main">' +
       '<div class="lh-tab on" data-t="home"><div class="lh-hero"><h1>Seja bem-vindo ao Dav7 Hub</h1><p class="cm-sub">Subway Surfers \u00b7 San Francisco</p></div>' +
       '<button type="button" class="cm-play" id="cm-play">Jogar</button>' +
+      '<div class="lh-soc"><a href="https://github.com/Davin170/SubwaySurfers" target="_blank" rel="noopener" title="GitHub"><svg width="22" height="22" viewBox="0 0 24 24" fill="#cfeff7"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.76 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></a><a href="https://www.tiktok.com/@dwz_07" target="_blank" rel="noopener" title="TikTok"><svg width="22" height="22" viewBox="0 0 24 24" fill="#cfeff7"><path d="M16.6 2h-3.300v13.300a2.800 2.800 0 1 1-2.800-2.800c.3 0 .6 0 .8.100V9.200a6.100 6.100 0 1 0 5.300 6.100V8.600a7.500 7.500 0 0 0 4.400 1.400V6.700A4.400 4.400 0 0 1 16.600 2z"/></svg></a></div>' +
       '<span id="lh-s1" style="display:none"></span><span id="lh-s2" style="display:none"></span>' +
       '<button type="button" class="lh-sec" id="cm-rest">Restaurar save original</button>' +
       '<div class="cm-nota" style="text-align:center">@dav7.zn</div></div>' +
