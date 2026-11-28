@@ -198,43 +198,83 @@
   }
 
   function criarMenu() {
-    var css = '#cr-menu{position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483646;display:flex;align-items:center;justify-content:center;' +
-      'background:rgba(5,8,14,.86);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#eee;}' +
-      '#cr-menu .cm-card{width:440px;max-width:92vw;max-height:92vh;overflow:auto;box-sizing:border-box;background:#101216;border:1px solid #2a2d33;' +
-      'border-radius:14px;padding:22px 22px 18px;box-shadow:0 20px 60px rgba(0,0,0,.6);}' +
-      '#cr-menu h1{margin:0 0 2px;font-size:22px;}' +
-      '#cr-menu .cm-sub{margin:0 0 12px;color:#9aa0aa;font-size:13px;}' +
-      '#cr-menu label.cm-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid #1d2026;font-size:14px;cursor:pointer;}' +
-      '#cr-menu input[type=number]{width:130px;background:#181b21;color:#fff;border:1px solid #2f333b;border-radius:7px;padding:6px 8px;font-size:14px;text-align:right;}' +
-      '#cr-menu input[type=checkbox]{width:18px;height:18px;accent-color:#2ecc71;}' +
-      '#cr-menu .cm-btns{display:flex;gap:10px;margin-top:16px;}' +
-      '#cr-menu button{flex:1;font:700 15px Arial,sans-serif;padding:12px;border:0;border-radius:9px;cursor:pointer;background:#262a31;color:#fff;}' +
-      '#cr-menu button.cm-play{background:linear-gradient(180deg,#a6ffbf,#2ecc71);color:#06280f;}' +
-      '#cr-menu .cm-nota{margin-top:10px;font-size:12px;color:#8a909a;min-height:16px;}';
+    var circ = "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='360' height='360' fill='none' stroke='%23a36bff' stroke-opacity='.22' stroke-width='1.5'><path d='M0 60h90l30 30h80M40 360V250l40-40h60M360 120h-70l-30 30v90M200 360v-60l50-50h110M120 0v40l30 30'/><circle cx='90' cy='60' r='4' fill='%23a36bff'/><circle cx='200' cy='90' r='4' fill='%23ffb454'/><circle cx='140' cy='210' r='4' fill='%23a36bff'/><circle cx='260' cy='150' r='4' fill='%23ffb454'/><circle cx='360' cy='300' r='4' fill='%23a36bff'/></svg>\")";
+    var css = '#cr-menu{position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483646;display:flex;flex-direction:column;' +
+      'background:' + circ + ',radial-gradient(ellipse at 50% 0%,#241447 0%,#0b0a1c 60%,#06060f 100%);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#eee;}' +
+      'body:has(#cr-menu[style*="flex"]) #cr-root{visibility:hidden !important;}' +
+      '#cr-menu .lh-top{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;}' +
+      '#cr-menu .lh-logo{font:800 22px Arial,sans-serif;letter-spacing:.5px;background:linear-gradient(90deg,#c8a2ff,#ffb454);-webkit-background-clip:text;background-clip:text;color:transparent;}' +
+      '#cr-menu .lh-logo small{font:700 10px Arial;color:#ffb454;-webkit-text-fill-color:#ffb454;border:1px solid #ffb45466;border-radius:6px;padding:1px 5px;margin-left:6px;vertical-align:middle;}' +
+      '#cr-menu .lh-right{display:flex;gap:8px;align-items:center;}' +
+      '#cr-menu .lh-chip{font:600 12px Arial;padding:7px 12px;border-radius:999px;background:#ffffff12;border:1px solid #ffffff1f;color:#d9ccff;}' +
+      '#cr-menu .lh-gear{flex:none;width:36px;height:36px;padding:0;border-radius:50%;font-size:17px;background:#ffffff12;border:1px solid #ffffff1f;color:#d9ccff;}' +
+      '#cr-menu .lh-main{flex:1;overflow:auto;display:flex;justify-content:center;align-items:flex-start;padding:10px 16px 110px;}' +
+      '#cr-menu .lh-tab{display:none;width:460px;max-width:100%;margin:auto;}' +
+      '#cr-menu .lh-tab.on{display:block;}' +
+      '#cr-menu .lh-hero{text-align:center;padding:26px 0 8px;}' +
+      '#cr-menu h1{margin:0 0 6px;font:800 28px Arial,sans-serif;}' +
+      '#cr-menu .cm-sub{margin:0 0 18px;color:#a79fc4;font-size:14px;}' +
+      '#cr-menu .lh-card{background:#ffffff0d;border:1px solid #ffffff1a;border-radius:16px;padding:6px 16px;backdrop-filter:blur(6px);}' +
+      '#cr-menu label.cm-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-top:1px solid #ffffff12;font-size:14px;cursor:pointer;}' +
+      '#cr-menu label.cm-row:first-child{border-top:0;}' +
+      '#cr-menu input[type=number]{width:130px;background:#0d0b1f;color:#fff;border:1px solid #3a3360;border-radius:8px;padding:7px 9px;font-size:14px;text-align:right;}' +
+      '#cr-menu input[type=checkbox]{width:19px;height:19px;accent-color:#a36bff;}' +
+      '#cr-menu button{font:700 15px Arial,sans-serif;padding:13px;border:0;border-radius:12px;cursor:pointer;background:#ffffff14;color:#fff;}' +
+      '#cr-menu button.cm-play{width:100%;font-size:18px;padding:16px;background:linear-gradient(90deg,#a36bff,#ff8a3d);color:#fff;box-shadow:0 8px 28px #a36bff55;}' +
+      '#cr-menu .lh-sec{width:100%;margin-top:12px;}' +
+      '#cr-menu .lh-stat{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0 4px;}' +
+      '#cr-menu .lh-tx{color:#b9b0d6;font-size:14px;line-height:1.5;margin:14px 4px;}' +
+      '#cr-menu .cm-nota{margin:12px 4px 0;font-size:12px;color:#8f86ad;min-height:16px;}' +
+      '#cr-menu .lh-nav{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:4px;padding:6px;border-radius:999px;background:#14102b;border:1px solid #ffffff22;box-shadow:0 10px 34px #000a;}' +
+      '#cr-menu .lh-nav button{flex:none;display:flex;flex-direction:column;align-items:center;gap:2px;min-width:68px;padding:8px 12px;border-radius:999px;background:transparent;font:600 11px Arial;color:#9a90bd;}' +
+      '#cr-menu .lh-nav button span{font-size:18px;line-height:1;}' +
+      '#cr-menu .lh-nav button.on{background:linear-gradient(90deg,#a36bff55,#ff8a3d44);color:#fff;}';
     var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 
     menuEl = document.createElement('div');
     menuEl.id = 'cr-menu';
     menuEl.style.display = 'none';
     menuEl.innerHTML =
-      '<div class="cm-card"><h1>Subway Surfers</h1><p class="cm-sub">Escolha como quer jogar.</p>' +
+      '<div class="lh-top"><div class="lh-logo">Dav7 Hub<small>BETA</small></div>' +
+      '<div class="lh-right"><div class="lh-chip" id="lh-chip">Save original</div><button type="button" class="lh-gear" id="lh-gear" title="Personalizar">\u2699</button></div></div>' +
+      '<div class="lh-main">' +
+      '<div class="lh-tab on" data-t="home"><div class="lh-hero"><h1>Pronto para correr?</h1><p class="cm-sub">Subway Surfers \u00b7 San Francisco</p></div>' +
+      '<button type="button" class="cm-play" id="cm-play">Jogar</button>' +
+      '<div class="lh-stat"><span class="lh-chip" id="lh-s1"></span><span class="lh-chip" id="lh-s2"></span></div>' +
+      '<button type="button" class="lh-sec" id="cm-rest">Restaurar save original</button>' +
+      '<div class="cm-nota" style="text-align:right">@dav7.zn</div></div>' +
+      '<div class="lh-tab" data-t="save"><div class="lh-hero"><h1>Save</h1><p class="cm-sub">Edite o seu progresso antes de jogar.</p></div><div class="lh-card">' +
       '<label class="cm-row"><span>Editar o meu save (liga tudo abaixo)</span><input type="checkbox" id="cm-mestre"></label>' +
       '<label class="cm-row"><span>Moedas</span><input type="number" id="cm-coins" min="0"></label>' +
       '<label class="cm-row"><span>Chaves</span><input type="number" id="cm-keys" min="0"></label>' +
       '<label class="cm-row"><span>HeadStarts</span><input type="number" id="cm-hs" min="0"></label>' +
       '<label class="cm-row"><span>Hoverboards</span><input type="number" id="cm-hb" min="0"></label>' +
       '<label class="cm-row"><span>Liberar todos os personagens</span><input type="checkbox" id="cm-chars"></label>' +
-      '<label class="cm-row"><span>No coin <small style="color:#8a909a">(sem moedas, chaves e hoverboard)</small></span><input type="checkbox" id="cm-nocoin"></label>' +
-      '<div class="cm-btns"><button type="button" class="cm-play" id="cm-play">Jogar</button>' +
-      '<button type="button" id="cm-rest">Restaurar save original</button></div>' +
-      '<div class="cm-btns" style="margin-top:8px"><button type="button" id="cm-online">Modo online</button><button type="button" id="cm-pers">Personalizar</button></div>' +
-      '<div class="cm-nota" style="text-align:right">@dav7.zn</div>' +
-      '<div class="cm-nota" id="cm-nota">Em moedas, chaves, HeadStarts e hoverboards, 0 = n\u00e3o mexer.</div></div>';
+      '<label class="cm-row"><span>No coin <small style="color:#8f86ad">(sem moedas, chaves e hoverboard)</small></span><input type="checkbox" id="cm-nocoin"></label></div>' +
+      '<div class="cm-nota" id="cm-nota">Em moedas, chaves, HeadStarts e hoverboards, 0 = n\u00e3o mexer.</div></div>' +
+      '<div class="lh-tab" data-t="online"><div class="lh-hero"><h1>Online</h1><p class="cm-sub">Dispute com um amigo com c\u00f3digo de 3 d\u00edgitos.</p></div>' +
+      '<div class="lh-card"><p class="lh-tx">Quem pega moeda, morre ou fica parado perde a rodada. O No coin \u00e9 ligado automaticamente.</p></div>' +
+      '<button type="button" class="cm-play lh-sec" id="cm-online">Abrir modo online</button></div>' +
+      '<div class="lh-tab" data-t="pers"><div class="lh-hero"><h1>Personalizar</h1><p class="cm-sub">Cores, fundo, teclas, FPS e mais.</p></div>' +
+      '<div class="lh-card"><p class="lh-tx">Mude o visual do cron\u00f4metro, as teclas na tela, as cores RGB e ative o contador de FPS.</p></div>' +
+      '<button type="button" class="cm-play lh-sec" id="cm-pers">Abrir personaliza\u00e7\u00e3o</button></div>' +
+      '</div>' +
+      '<div class="lh-nav"><button type="button" class="on" data-t="home"><span>\u2302</span>In\u00edcio</button>' +
+      '<button type="button" data-t="save"><span>\u2630</span>Save</button>' +
+      '<button type="button" data-t="online"><span>\u21c4</span>Online</button>' +
+      '<button type="button" data-t="pers"><span>\u2726</span>Personalizar</button></div>';
     document.body.appendChild(menuEl);
+    function aba(t) {
+      [].forEach.call(menuEl.querySelectorAll('.lh-tab'), function (x) { x.classList.toggle('on', x.getAttribute('data-t') === t); });
+      [].forEach.call(menuEl.querySelectorAll('.lh-nav button'), function (x) { x.classList.toggle('on', x.getAttribute('data-t') === t); });
+    }
+    [].forEach.call(menuEl.querySelectorAll('.lh-nav button'), function (b) { b.addEventListener('click', function () { aba(b.getAttribute('data-t')); }); });
+    var abrirPers = function () { if (CR.personalizarAbrir) { menuEl.style.display = 'none'; CR.personalizarAbrir(); } else $m('cm-nota').textContent = 'personalizar.js n\u00e3o carregou.'; };
+    $m('lh-gear').addEventListener('click', abrirPers);
     $m('cm-play').addEventListener('click', aoJogar);
     $m('cm-nocoin').addEventListener('change', atualizarCamposNoCoin);
     $m('cm-rest').addEventListener('click', restaurarOriginal);
-    $m('cm-pers').addEventListener('click', function () { if (CR.personalizarAbrir) { menuEl.style.display = 'none'; CR.personalizarAbrir(); } else $m('cm-nota').textContent = 'personalizar.js n\u00e3o carregou.'; });
+    $m('cm-pers').addEventListener('click', abrirPers);
     $m('cm-online').addEventListener('click', function () { if (CR.onlineAbrir) { if (!CR.exigirNoCoin()) { $m('cm-nota').textContent = 'Ativando No coin para o modo online...'; return; } menuEl.style.display = 'none'; CR.onlineAbrir(); } else $m('cm-nota').textContent = 'online.js n\u00e3o carregou.'; });
     // teclas digitadas no menu nao vao para o jogo nem para o WASD
     ['keydown', 'keyup', 'keypress'].forEach(function (t) { menuEl.addEventListener(t, function (e) { if (menuEl.style.display === 'flex') e.stopPropagation(); }); });
@@ -254,6 +294,9 @@
     $m('cm-hs').value = cfg.headstart; $m('cm-hb').value = cfg.hoverboard;
     $m('cm-chars').checked = cfg.characters; $m('cm-nocoin').checked = cfg.noCoin;
     atualizarCamposNoCoin();
+    $m('lh-s1').textContent = cheatOn ? 'Save editado' : 'Save original';
+    $m('lh-s2').textContent = cfg.noCoin ? 'No coin: ligado' : 'No coin: desligado';
+    $m('lh-chip').textContent = cheatOn ? 'Save editado' : 'Save original';
     menuEl.style.display = 'flex';
   }
 
