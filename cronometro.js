@@ -60,7 +60,7 @@
     '#cr-root .cr-main{font-size:1em;}' +
     '#cr-root .cr-dec{font-size:.5em;}' +
     '#cr-grip{position:absolute;right:0;bottom:0;width:30px;height:30px;cursor:nwse-resize;opacity:.45;}' +
-    '#cr-grip:after{content:"";position:absolute;right:4px;bottom:4px;width:12px;height:12px;' +
+    '#cr-grip:after{display:none;content:"";position:absolute;right:4px;bottom:4px;width:12px;height:12px;' +
     'border-right:3px solid rgba(255,255,255,.8);border-bottom:3px solid rgba(255,255,255,.8);}' +
     '#cr-root:hover #cr-grip{opacity:1;}' +
     '#cr-panel{position:absolute;left:0;display:none;width:340px;max-width:92vw;' +

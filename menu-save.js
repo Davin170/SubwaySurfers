@@ -240,13 +240,13 @@
     menuEl.style.display = 'none';
     menuEl.innerHTML =
       '<div class="lh-top"><div class="lh-logo">Dav7 Hub<small>BETA</small></div>' +
-      '<div class="lh-right"><div class="lh-chip" id="lh-chip">Save original</div><button type="button" class="lh-gear" id="lh-gear" title="Personalizar">\u2699</button></div></div>' +
+      '<div class="lh-right"><span id="lh-chip" style="display:none"></span><button type="button" class="lh-gear" id="lh-gear" title="Personalizar">\u2699</button></div></div>' +
       '<div class="lh-main">' +
       '<div class="lh-tab on" data-t="home"><div class="lh-hero"><h1>Seja bem-vindo ao Dav7 Hub</h1><p class="cm-sub">Subway Surfers \u00b7 San Francisco</p></div>' +
       '<button type="button" class="cm-play" id="cm-play">Jogar</button>' +
-      '<div class="lh-stat"><span class="lh-chip" id="lh-s1"></span><span class="lh-chip" id="lh-s2"></span></div>' +
+      '<span id="lh-s1" style="display:none"></span><span id="lh-s2" style="display:none"></span>' +
       '<button type="button" class="lh-sec" id="cm-rest">Restaurar save original</button>' +
-      '<div class="lh-foot"><span>Sobre n\u00f3s</span><span>Contato</span><span>Termos de uso</span><span>Suporte</span></div><div class="lh-soc"><i>f</i><i>ig</i><i>\u25b6</i><i>\u27a4</i></div><div class="cm-nota" style="text-align:center">@dav7.zn</div></div>' +
+      '<div class="cm-nota" style="text-align:center">@dav7.zn</div></div>' +
       '<div class="lh-tab" data-t="save"><div class="lh-hero"><h1>Save</h1><p class="cm-sub">Edite o seu progresso antes de jogar.</p></div><div class="lh-card">' +
       '<label class="cm-row"><span>Editar o meu save (liga tudo abaixo)</span><input type="checkbox" id="cm-mestre"></label>' +
       '<label class="cm-row"><span>Moedas</span><input type="number" id="cm-coins" min="0"></label>' +
